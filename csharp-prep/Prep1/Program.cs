@@ -1,12 +1,11 @@
 using System;
-
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Prep1 World!");
         Console.Write("what is your first name?");
-        Console.Write("what is your middle name?");
+        
 
         string first = Console.ReadLine();
 
