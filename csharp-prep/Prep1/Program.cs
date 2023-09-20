@@ -6,6 +6,8 @@ class Program
     {
         Console.WriteLine("Hello Prep1 World!");
         Console.Write("what is your first name?");
+        Console.Write("what is your middle name?");
+
         string first = Console.ReadLine();
 
         Console.Write("what is your last name?");
