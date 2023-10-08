@@ -2,13 +2,13 @@ class Journal
 {
     private List<Entry> entries = new List<Entry>();
 
-    public void AddEntry(string prompt, string response)
+    public void AddEntry(string _prompt, string _response)
     {
         
         Entry entry = new Entry
         {
-            Prompt = prompt,
-            Response = response,
+            Prompt = _prompt,
+            Response = _response,
             Date = DateTime.Now
         };
         entries.Add(entry);

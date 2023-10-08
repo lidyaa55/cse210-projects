@@ -41,6 +41,7 @@
                     break;
                 case 5:
                      exitProgram = true;
+                     Console.WriteLine("Bye see you Later !!");
                     break;
               default:
                     Console.WriteLine("Invalid choice. Please try again.");
