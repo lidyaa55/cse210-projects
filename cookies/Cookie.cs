@@ -22,7 +22,7 @@ public class Cookie {
         Console.WriteLine(_doughAmount);
         Console.WriteLine(_friut);
         Console.WriteLine(_freeSugar);
-        Console.WriteLine("hi I'm andres");
+        
     }
 
     public void otherFunction(){
