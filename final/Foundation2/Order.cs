@@ -1,34 +1,39 @@
+class Order{
+    private List<Product> listOfProducts = new List<Product>();
+    private Customer customer;
+   
+    private int shippingCost;
 
-class Order
-{
-    public List<Product> Products { get; }
-    public Customer Customer { get; }
+    public Order(Customer customer){
+        this.customer = customer;
 
-    public Order(List<Product> products, Customer customer)
-    {
-        Products = products;
-        Customer = customer;
-    }
-
-    public decimal CalculateTotalCost()
-    {
-        decimal totalCost = 0;
-        foreach (var product in Products)
-        {
-            totalCost += product.CalculateTotalPrice();
+        if (this.customer.fromUSA() == true){
+            shippingCost = 5;
         }
-        return totalCost;
+        else{
+            shippingCost = 35;
+        }
     }
 
-    public string GetPackingLabel()
-    {
-        // Implement packing label generation logic here
-        return "Packing Label";
+    public void packingLabel(){
+        foreach (Product product in listOfProducts){
+            Console.WriteLine($"{product.getName()} - {product.getId()}");
+        }
     }
 
-    public string GetShippingLabel()
-    {
-        // Implement shipping label generation logic here
-        return "Shipping Label";
+    public void shippingLabel(){
+        Console.WriteLine($"{customer.getName()} - {customer.getAddress()}");
+    }
+
+    public void addProduct(Product product){
+        listOfProducts.Add(product);
+    }
+
+    public double getTotalPrice(){
+        double totalCost = 0;
+        foreach (Product product in listOfProducts){
+            totalCost += product.getTotalPrice();
+        }
+        return totalCost+shippingCost;
     }
 }

@@ -1,22 +1,27 @@
-class Product
-{
-    public string Name { get; }
-    public int ProductId { get; }
-    private decimal Price { get; }
-    private int Quantity { get; }
+using System.Data.Common;
 
-    public Product(string name, int productId, decimal price, int quantity)
-    {
-        Name = name;
-        ProductId = productId;
-        Price = price;
-        Quantity = quantity;
+class Product{
+    private string name;
+    private int id;
+    private double price;
+    private int quantity;
+
+    public Product(string name, int id, double price, int quantity){
+        this.name = name;
+        this.id = id;
+        this.price = price;
+        this.quantity = quantity;
     }
 
-    public decimal CalculateTotalPrice()
-    {
-        return Price * Quantity;
+    public double getTotalPrice(){
+        return price * quantity;
+    }
+
+    public string getName(){
+        return name;
+    }
+
+    public int getId(){
+        return id;
     }
 }
-
-

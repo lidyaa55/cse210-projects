@@ -1,27 +1,27 @@
+class Address{
+    private string street;
+    private string city;
+    private string state;
+    private string country;
 
-class Address
-{
-    private string StreetAddress { get; }
-    private string City { get; }
-    private string StateProvince { get; }
-    private string Country { get; }
-
-    public Address(string streetAddress, string city, string stateProvince, string country)
-    {
-        StreetAddress = streetAddress;
-        City = city;
-        StateProvince = stateProvince;
-        Country = country;
+    public Address(string street, string city, string state, string country){
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.country = country;
     }
 
-    public bool IsInUSA()
+    public bool isUSA()
     {
-        return Country.Equals("USA", StringComparison.OrdinalIgnoreCase);
+        if (country == "USA"){
+            return true;
+        }
+        return false;
     }
 
-    public string GetFormattedAddress()
-    {
-        return $"{StreetAddress}, {City}, {StateProvince}, {Country}";
+    public string getAddress(){
+        return $"{street},{city},{state} {country}";
     }
+
+
 }
-
